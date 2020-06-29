@@ -33,6 +33,9 @@ return [0, 1].*/
 
 
 
+
+
+
 // 2. Reverse Integer
 
 /*
@@ -91,6 +94,9 @@ function reversedNum(num) {
 };*/
 
 
+
+
+
 // 3. palindrome number
 
 /*Determine whether an integer is a palindrome. An integer is a palindrome when it reads the
@@ -113,5 +119,7 @@ Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
     Follow up:
 
-    Coud you solve it without converting the integer to a string?*/
+    Could you solve it without converting the integer to a string?*/
+
+
 
