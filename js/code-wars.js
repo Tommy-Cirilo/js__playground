@@ -195,3 +195,17 @@ function getInitials(first, last) {
 function getInitials(first, last) {
     return (typeof(first) == 'string' && typeof(last) == 'string' && isNaN(first) && isNaN(last)) ? `${first.charAt(0)}.${last.charAt(0)}.` : false;
 }*/
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
