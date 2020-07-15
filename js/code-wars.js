@@ -741,6 +741,22 @@ console.log(findUsers()); //['sophie, vivian, david']
 // a string of comma separated values. It should reverse the order of the values and return a string.
 // Eg. reverseArrayString("1,2,3") should return "3,2,1"
 
+/*const reverseArrayString = function(arr) {
+    let reverse = "";
+    for (let i = arr.length -1; i >=0; i--) {
+        reverse += arr[i];
+    }
+    return reverse;
+}*/
+
+//alternative
+
+const reverseArrayString = function (str) {
+    let arr = str.split(",");
+    arr.reverse();
+    return arr.join(",");
+}
+
 
 
 // Define a function `swapFirstLast` that accepts one argument, an array. It should take the first
@@ -748,15 +764,63 @@ console.log(findUsers()); //['sophie, vivian, david']
 // Eg. swapFirstLast([0,2,4]) should return [4,2,0]
 
 
+const swapFirstLast = function (arr) {
+    let first = arr.shift();
+    let last = arr.pop();
+
+    arr.unshift(last);
+    arr.push(first);
+
+    return arr;
+}
+
 
 // Define a function `chopDNA` that accepts one argument, an array of strings. It should iterate the
 // array, if the element is the stop codon "TAG", chop off the rest of the array and return it.
 // Eg. chopDNA(["CCC", "AGG", "TAA", "CAA"]) should return ["CCC", "AGG", "TAA"]
 
 
+ const chopDNA = function (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "TAA") {
+            return arr.splice(0,i +1);
+        }
+    }
+ }
 
-// Define a function `sortByViews` that accepts one argument, an array of objects. It should iterate
-// the array and sort the objects by their `views` property.
+ // return arr.slice(0, arr.indexOf("TAA") + 1);
+
+
+// Define a function `sortByViews` that accepts one argument, an array of objects.
+// It should iterate the array and sort the objects by their `views` property.
+
+const sortByViews = function(arr) {
+
+    // Sort the array in place
+    arr.sort(function(objA, objB) {
+
+        // If `objA.views` is higher, set objA to a higher index
+        if(objA.views > objB.views) {
+            return 1;
+            // If `objA.views` is lower, set objA to a lower index
+        } else if(objA.views < objB.views) {
+            return -1;
+        }
+
+        // If `objA.views` is equal to `objB.views`, leave them where they are.
+        return 0;
+    });
+
+    return arr;
+}
+
+
+
+/*
+const sortByViews = function(arr) {  
+arr.sort(function(objA, objB) { 
+return objA.views - objB.views;   });  
+return arr; } */
 
 
 
