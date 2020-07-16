@@ -632,7 +632,6 @@ function sumOfNumbers(arr) {
 console.log(sumOfNumbers([1, 2, 3, 4, 5])); // 15
 // console.log(sumOfNumbers([-1, 15])); // 14
 
-
 // const sumOfNumbers = function (arr) {
 //     let sum = 0;
 //     for (let i=0;i<arr.length; i++) {
@@ -652,6 +651,13 @@ console.log(sumOfNumbers([1, 2, 3, 4, 5])); // 15
 
 // TODO: Write a function 'evensIndex' that takes in an array of numbers and returns
 //  an array containing the index values of all even numbers.
+
+function evensIndex(arr) {
+    arr.forEach(function (num) {
+
+    })
+}
+
 
 
 // evensIndex([1,2,3,4,5,6]) // returns [1,3,5]
