@@ -518,11 +518,23 @@
 // Welcome to your JS 3rd Assessment Review. This will include some things from the previous assessments, as well as Array and Object manipulation. Below are some practice questions for you to get started.
 
 // TODO: Write a function named 'typeOfValue' that takes in a value and returns its type.
-const typeOfValue = function (value) {
-    return typeOfValue(value);
-}
 
-console.log(typeOfValue("hello"));
+/*const typeOfValue = function (value) {
+    return typeOfValue(value);
+}*/
+
+
+function typeOfValue(num) {
+    return typeof(num);
+}
+console.log(typeof 123);
+console.log(typeOfValue("string"));
+
+
+
+// console.log(typeOfValue(123));
+
+// console.log(typeOfValue("hello"));
 
 
 // const typeOfValue = function (value) {
@@ -542,7 +554,40 @@ console.log(typeOfValue("hello"));
 // isPositive(-4) // false
 // isPositive(0) // false
 
+function isPositive(num) {
+    if (num %2 === 0) {
+        return true;
+    }
+    return false;
+}
+
+console.log(isPositive(2));
+
+/*
+const isPositive = function (num) {
+    if (num %2 === 0){
+        return true;
+    }
+}
+
+console.log(isPositive(2));
+*/
+
+
 // TODO: Write a function 'removeElement' that takes in an array and a value, and returns an Array with the first instance of the indicated value removed.
+
+function removeElement(arr, val) {
+    let index = arr.indexOf(val);
+    if (index >= 0) {
+        arr.splice(index,1)
+    }
+    return arr;
+}
+
+
+console.log(removeElement([1, 2, 3, 4, 5], 4)); // returns [1,2,3,5]
+// console.log(removeElement([2, 2, 4, 4, 5], 2)); // returns [2,4,4,5]
+// console.log(removeElement([10], 10)); // returns []
 
 
 // const removeElement = function (arr, val) {
@@ -566,17 +611,27 @@ console.log(typeOfValue("hello"));
 //     return arr2;
 // }
 
-
-
-
-
-
 // console.log(removeElement([1, 2, 3, 4, 5], 4)); // returns [1,2,3,5]
 // console.log(removeElement([2, 2, 4, 4, 5], 2)); // returns [2,4,4,5]
 // console.log(removeElement([10], 10)); // returns []
 
+
+
+
+
 // TODO: Write a function 'sumOfNumbers' that takes in an array of numbers and returns
 //  the sum of all values.
+
+function sumOfNumbers(arr) {
+    let sum=0;
+    for (let i=0; i < arr.length; i++){
+        sum += arr[i];
+    }
+}
+
+console.log(sumOfNumbers([1, 2, 3, 4, 5])); // 15
+// console.log(sumOfNumbers([-1, 15])); // 14
+
 
 // const sumOfNumbers = function (arr) {
 //     let sum = 0;
