@@ -519,16 +519,23 @@
 
 // TODO: Write a function named 'typeOfValue' that takes in a value and returns its type.
 const typeOfValue = function (value) {
-    if (Array.isArray(value)) {
-        return "array";
-    }
-    return typeof(value);
+    return typeOfValue(value);
 }
 
-console.log(typeOfValue("hello")); // "string"
-console.log(typeOfValue(123)); // "number"
-console.log(typeOfValue([])); // "object"
-console.log(typeOfValue([4, 5, 6])); // "object"
+console.log(typeOfValue("hello"));
+
+
+// const typeOfValue = function (value) {
+//     if (Array.isArray(value)) {
+//         return "array";
+//     }
+//     return typeof(value);
+// }
+//
+// console.log(typeOfValue("hello")); // "string"
+// console.log(typeOfValue(123)); // "number"
+// console.log(typeOfValue([])); // "object"
+// console.log(typeOfValue([4, 5, 6])); // "object"
 
 // TODO: Write a function 'isPositive' that takes in a number and returns true or false based on whether the input is positive.
 // isPositive(2) // true
@@ -538,7 +545,7 @@ console.log(typeOfValue([4, 5, 6])); // "object"
 // TODO: Write a function 'removeElement' that takes in an array and a value, and returns an Array with the first instance of the indicated value removed.
 
 
-const removeElement = function (arr, val) {
+// const removeElement = function (arr, val) {
     // let index = arr.indexOf(val);
     // if (index > -1) {
     //     arr.splice(index,1)
@@ -547,46 +554,46 @@ const removeElement = function (arr, val) {
 
 
     //alternatively
-    let arr2 = [];
-    let found = false;
-    for (let i=0; i<arr.length; i++) {
-        if (arr[i] === val && !found) {
-            found = true;
-        } else {
-            arr2.push(arr[i]);
-        }
-    }
-    return arr2;
-}
+//     let arr2 = [];
+//     let found = false;
+//     for (let i=0; i<arr.length; i++) {
+//         if (arr[i] === val && !found) {
+//             found = true;
+//         } else {
+//             arr2.push(arr[i]);
+//         }
+//     }
+//     return arr2;
+// }
 
 
 
 
 
 
-console.log(removeElement([1, 2, 3, 4, 5], 4)); // returns [1,2,3,5]
-console.log(removeElement([2, 2, 4, 4, 5], 2)); // returns [2,4,4,5]
-console.log(removeElement([10], 10)); // returns []
+// console.log(removeElement([1, 2, 3, 4, 5], 4)); // returns [1,2,3,5]
+// console.log(removeElement([2, 2, 4, 4, 5], 2)); // returns [2,4,4,5]
+// console.log(removeElement([10], 10)); // returns []
 
 // TODO: Write a function 'sumOfNumbers' that takes in an array of numbers and returns
 //  the sum of all values.
 
-const sumOfNumbers = function (arr) {
-    /*let sum = 0;
-    for (let i=0;i<arr.length; i++) {
-        sum += arr[i];
-    }*/
+// const sumOfNumbers = function (arr) {
+//     let sum = 0;
+//     for (let i=0;i<arr.length; i++) {
+//         sum += arr[i];
+//     }
 
     //alternative
-    arr.forEach(function (item) {
-        sum += item;
-    })
-    return sum;
-}
+//     arr.forEach(function (item) {
+//         sum += item;
+//     })
+//     return sum;
+// }
 
 
-console.log(sumOfNumbers([1, 2, 3, 4, 5])); // 15
-console.log(sumOfNumbers([-1, 15])); // 14
+// console.log(sumOfNumbers([1, 2, 3, 4, 5])); // 15
+// console.log(sumOfNumbers([-1, 15])); // 14
 
 // TODO: Write a function 'evensIndex' that takes in an array of numbers and returns
 //  an array containing the index values of all even numbers.
@@ -659,28 +666,28 @@ console.log(sumOfNumbers([-1, 15])); // 14
 
 
 //alternatively
-const  addRole = function (role) {
-    myMac.users.forEach(function (item) {
-        item.role = role;
-    })
-}
-
-console.log(myMac.users);
-addRole("instructor");
-console.log(myMac.users);
+// const  addRole = function (role) {
+//     myMac.users.forEach(function (item) {
+//         item.role = role;
+//     })
+// }
+//
+// console.log(myMac.users);
+// addRole("instructor");
+// console.log(myMac.users);
 
 // TODO: Write a function 'countLetters' that takes in a string and a character, and
 //  counts the number of instances of that character in the string.
 
-const countLetters = function (str, char) {
-    let num = 0;
-    for (let i = 0; i < str.length; i++) {
-        if (str[i].toLowerCase() === char.toLowerCase()) {
-            num++;
-        }
-    }
-    return num;
-}
+// const countLetters = function (str, char) {
+//     let num = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         if (str[i].toLowerCase() === char.toLowerCase()) {
+//             num++;
+//         }
+//     }
+//     return num;
+// }
 
 
 // countLetters("banana", "a") // returns 3
@@ -697,13 +704,13 @@ const countLetters = function (str, char) {
 //  array with the count of a character for each string. You may be able to use your
 //  countLetters function here.
 
-const countAll = function (strings, letter) {
-    let answer = [];
-    for (let i=0; i<strings.length; i++) {
-        countLetters(strings[i], letter)
-        //or answer.push(countLetters(strings[i], letter));
-    }
-}
+// const countAll = function (strings, letter) {
+//     let answer = [];
+//     for (let i=0; i<strings.length; i++) {
+//         countLetters(strings[i], letter)
+//         //or answer.push(countLetters(strings[i], letter));
+//     }
+// }
 
 // countAll(["banana", "html", "java"], "a") // returns [3,0,2]
 // countAll(["push", "your", "commits"], "u") // returns [1,1,0]
@@ -715,27 +722,32 @@ const countAll = function (strings, letter) {
 //given the following array of objects, write a function'find users' that returns an
 //array or usernames
 
-var myMac = {};
-
-myMac.users = [
-    {username: "sophie", id:1},
-    {username: "tommy", id:2},
-    {username: "johnny", id:3}
-];
-
-const findUsers = function (usersArray) {
-    let usernames = [];
-    for (let i=0; i<usersArray.length; i++) {
-        usernames.push(usersArray[i].username);
-    }
-}
-
-console.log(findUsers()); //['sophie, vivian, david']
+// var myMac = {};
+//
+// myMac.users = [
+//     {username: "sophie", id:1},
+//     {username: "tommy", id:2},
+//     {username: "johnny", id:3}
+// ];
+//
+// const findUsers = function (usersArray) {
+//     let usernames = [];
+//     for (let i=0; i<usersArray.length; i++) {
+//         usernames.push(usersArray[i].username);
+//     }
+// }
+//
+// console.log(findUsers()); //['sophie, vivian, david']
 
 
 
 
 // ---------------------------------------------------------------------------------------------------------------
+//second review for arrays and objects
+
+
+
+
 
 // Define a function `reverseArrayString` that accepts one argument,
 // a string of comma separated values. It should reverse the order of the values and return a string.
@@ -751,11 +763,11 @@ console.log(findUsers()); //['sophie, vivian, david']
 
 //alternative
 
-const reverseArrayString = function (str) {
-    let arr = str.split(",");
-    arr.reverse();
-    return arr.join(",");
-}
+// const reverseArrayString = function (str) {
+//     let arr = str.split(",");
+//     arr.reverse();
+//     return arr.join(",");
+// }
 
 
 
@@ -764,15 +776,15 @@ const reverseArrayString = function (str) {
 // Eg. swapFirstLast([0,2,4]) should return [4,2,0]
 
 
-const swapFirstLast = function (arr) {
-    let first = arr.shift();
-    let last = arr.pop();
-
-    arr.unshift(last);
-    arr.push(first);
-
-    return arr;
-}
+// const swapFirstLast = function (arr) {
+//     let first = arr.shift();
+//     let last = arr.pop();
+//
+//     arr.unshift(last);
+//     arr.push(first);
+//
+//     return arr;
+// }
 
 
 // Define a function `chopDNA` that accepts one argument, an array of strings. It should iterate the
@@ -780,13 +792,13 @@ const swapFirstLast = function (arr) {
 // Eg. chopDNA(["CCC", "AGG", "TAA", "CAA"]) should return ["CCC", "AGG", "TAA"]
 
 
- const chopDNA = function (arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] === "TAA") {
-            return arr.splice(0,i +1);
-        }
-    }
- }
+ // const chopDNA = function (arr) {
+ //    for (let i = 0; i < arr.length; i++) {
+ //        if (arr[i] === "TAA") {
+ //            return arr.splice(0,i +1);
+ //        }
+ //    }
+ // }
 
  // return arr.slice(0, arr.indexOf("TAA") + 1);
 
@@ -794,7 +806,7 @@ const swapFirstLast = function (arr) {
 // Define a function `sortByViews` that accepts one argument, an array of objects.
 // It should iterate the array and sort the objects by their `views` property.
 
-const sortByViews = function(arr) {
+/*const sortByViews = function(arr) {
 
     // Sort the array in place
     arr.sort(function(objA, objB) {
@@ -810,9 +822,8 @@ const sortByViews = function(arr) {
         // If `objA.views` is equal to `objB.views`, leave them where they are.
         return 0;
     });
-
     return arr;
-}
+}*/
 
 
 
