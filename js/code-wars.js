@@ -675,6 +675,8 @@ function evensIndex(arr) {
 //
 // stringToArray("1,2,3") // returns ['1','2','3']
 // stringToArray("dog") // returns ['dog']
+
+
 // Given the following array of objects, write a function 'findUsers' that returns an Array of usernames.
 //     var myMac = {};
 // myMac.users = [
