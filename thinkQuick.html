@@ -26,23 +26,38 @@
 
 
     //Fizz Buzz Exercise
-    //write a function that takes in one input, and returns fizz buzz if input is a multiple of 5 and 3
+    //write a function that takes in one input and loops through and logs fizz buzz if input is a
+    // multiple of 5 and 3
     //fizz if multiple of 3
     //buzz if multiple of 5
 
     const fizzBuzz = num => {
-        if (num %3 === 0 && num % 5 === 0) {
-            return "Fizz Buzz";
-        } else if (num % 3 === 0) {
-            return "Fizz";
-        } else if (num % 5 === 0) {
-            return "Buzz";
+        for (let i = 0; i <= num; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("Fizz Buzz");
+            } else if (i % 3 === 0) {
+                console.log("Fizz");
+            } else if (i % 5 === 0) {
+                console.log("Buzz");
+            } else {
+                console.log(i);
+            }
         }
     }
 
     console.log(fizzBuzz(15));
-    console.log(fizzBuzz(10));
-    console.log(fizzBuzz(6));
+
+
+    //Anagram Exercise
+    //Write a function that checks if two provided strings are anagrams of each others,
+    //letter casing shouldn't matter.
+    //Only check for characters, not spaces or punctuation.
+    //Example= 'finder' , 'friend' --> true
+
+
+    const anagram = (str1, str2) => {
+
+    }
 
 
 
