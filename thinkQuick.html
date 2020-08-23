@@ -13,7 +13,40 @@
 
 <script>
     //Palindrome Exercise
-    /*Write a */
+    // Write a function that has one input and returns a palindrome. Verify with a boolean
+
+    const palindrome = str => {
+        //make input case insensitive
+        str = str.toLowerCase();
+        //turn input into an array, then reverse the array, and then turn array back into a string
+        return str === str.split('').reverse().join('');
+    }
+    console.log(palindrome("Racecar"));
+
+
+
+    //Fizz Buzz Exercise
+    //write a function that takes in one input, and returns fizz buzz if input is a multiple of 5 and 3
+    //fizz if multiple of 3
+    //buzz if multiple of 5
+
+    const fizzBuzz = num => {
+        if (num %3 === 0 && num % 5 === 0) {
+            return "Fizz Buzz";
+        } else if (num % 3 === 0) {
+            return "Fizz";
+        } else if (num % 5 === 0) {
+            return "Buzz";
+        }
+    }
+
+    console.log(fizzBuzz(15));
+    console.log(fizzBuzz(10));
+    console.log(fizzBuzz(6));
+
+
+
+
 </script>
 </body>
 </html>
