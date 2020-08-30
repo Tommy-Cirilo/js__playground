@@ -27,7 +27,19 @@
             comp[target-nums[i]] = i
         }
     };
-    twoSum(0,15);
+    // twoSum(0,15);
+
+    //Reverse Integer
+//    Given a 32-bit signed integer, reverse digits of an integer.
+    var reverse = function(x) {
+        const limit = 2147483648;
+        const k = x < 0 ? -1 : 1;
+        const n = Number(String(Math.abs(x)).split('').reverse().join(''));
+        return n > limit ? 0 : n * k;
+    };
+    // reverse(321);
+
+
 </script>
 </body>
 </html>
