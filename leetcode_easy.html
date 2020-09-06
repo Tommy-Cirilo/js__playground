@@ -102,6 +102,50 @@
         return result;
     };
 
+
+    //14. Longest Common Prefix
+    /*Write a function to find the longest common prefix string amongst an array of strings.
+
+    If there is no common prefix, return an empty string "".
+
+    Example 1:
+
+    Input: ["flower","flow","flight"]
+    Output: "fl"
+    Example 2:
+
+    Input: ["dog","racecar","car"]
+    Output: ""
+    Explanation: There is no common prefix among the input strings.
+    Note:
+
+    All given inputs are in lowercase letters a-z.
+
+    */
+
+    const longestCommonPrefix = (strs) => {
+        if (!strs || strs.length === 0) {
+            return ''
+        }
+        let prefix = strs[0].substr(0);
+        let len = prefix.length;
+        let arr = strs.slice(1);
+        let i = 0;
+
+        while (i < arr.length) {
+            if (len === 0) {
+                return '';
+            }
+            if (arr[i].substr(0, len) !== prefix) {
+                len--;
+                prefix = strs[0].substr(0, len);
+            } else if (arr[i].substr(0, len) === prefix) {
+                i++;
+            }
+        }
+        return prefix;
+    };
+
 </script>
 </body>
 </html>
