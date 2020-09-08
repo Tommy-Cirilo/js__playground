@@ -310,9 +310,35 @@
             }
         }
     };
-    let numbers = [1, 2, 4, 5, 6];
-    console.log(removeElement(numbers, 4));
+    // let numbers = [1, 2, 4, 5, 6];
+    // console.log(removeElement(numbers, 4));
 
+
+    //Implement strStr()
+
+    /*Implement strStr().
+
+    Return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
+
+    Example 1:
+
+    Input: haystack = "hello", needle = "ll"
+    Output: 2
+    Example 2:
+
+    Input: haystack = "aaaaa", needle = "bba"
+    Output: -1*/
+
+    let strStr = function(haystack, needle) {
+        const nL = needle.length
+        if (needle === "")
+            return 0;
+        for (let i = 0; i < haystack.length; i++){
+            if (haystack.slice(i, nL+i) === needle)
+                return (i);
+        }
+        return (-1);
+    };
 
 </script>
 </body>
