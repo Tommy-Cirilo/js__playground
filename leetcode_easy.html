@@ -329,16 +329,45 @@
     Input: haystack = "aaaaa", needle = "bba"
     Output: -1*/
 
-    let strStr = function(haystack, needle) {
+    let strStr = function (haystack, needle) {
         const nL = needle.length
         if (needle === "")
             return 0;
-        for (let i = 0; i < haystack.length; i++){
-            if (haystack.slice(i, nL+i) === needle)
+        for (let i = 0; i < haystack.length; i++) {
+            if (haystack.slice(i, nL + i) === needle)
                 return (i);
         }
         return (-1);
     };
+
+
+    //search insert position
+
+    /*Given a sorted array and a target value, return the index if the target is found. If not, return the index where it would be if it were
+    inserted in order.
+
+    You may assume no duplicates in the array.
+
+    Example 1:
+
+    Input: [1,3,5,6], 5
+    Output: 2*/
+
+    let searchInsert = function (nums, target) {
+        let i = 0;
+
+        if (Math.max(...nums) < target) {
+            return nums.length;
+        }
+
+        for (i = 0; i < nums.length; i += 1) {
+            if (target <= nums[i]) {
+                return i;
+            }
+        }
+    };
+
+
 
 </script>
 </body>
